@@ -1,13 +1,18 @@
 <?php include 'header.html'; ?>
 	<?php include 'nav.html'; ?>
 	<!-- Cabecera -->
-	<header data-parallax="scroll" data-image-src="assets/images/cabecera/fondo.jpg">
+	<header class="section active" data-parallax="scroll" data-image-src="assets/images/cabecera/fondo.jpg">
 		<ul>
 			<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
 			<li><a href="#" target="_blank"><i class="fab fa-behance"></i></a></li>
 			<li><a href="#" target="_blank"><i class="fas fa-basketball-ball"></i></a></li>
 			<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
 		</ul>
+		<h1>
+			<span>meetdesign</span>
+			<i>us</i>
+			<strong>#development</strong>
+		</h1>
 		<h-footer>
 			<div>
 				<img src="assets/images/logo.png" alt="Logotipo de Somos Nosotros. &reg;">
@@ -28,7 +33,7 @@
 		</h-footer>
 	</header>
 	<!-- Clientes -->
-	<section id="Clientes">
+	<section class="section" id="Clientes">
 		<div>
 			<img src="assets/images/clientes/video.jpg">
 		</div>
@@ -50,10 +55,8 @@
 			</div>
 		</clients>
 	</section>
-	<!-- Descanso -->
-	<break data-parallax="scroll" data-image-src="assets/images/descanso/fondo.jpg"></break>
 	<!-- Servicios -->
-	<section id="Servicios">
+	<section class="section" id="Servicios">
 		<h1>Servicios_</h1>
 		<div>
 			<a href="#" style="background-image: url('assets/images/servicios/img-1.jpg');">
@@ -95,7 +98,7 @@
 		</div>
 	</section>
 	<!-- Portafolio -->
-	<section id="Portafolio">
+	<section class="section" id="Portafolio">
 		<div>
 			<item-group>
 				<item style="background-image: url('assets/images/portafolio/1.jpg');"></item>
@@ -130,7 +133,7 @@
 		</div>
 	</section>
 	<!-- Contacto -->
-	<section id="Contacto">
+	<section class="section" id="Contacto">
 		<h1>
 			<span>con</span>
 			<span>táctanos</span>

@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 @import url('https://fonts.googleapis.com/css?family=Zilla+Slab:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900');
+
+/*
+	-> Tipografías {
+		Cursiva {
+			font-family: 'Playfair Display', serif;
+		}
+
+		Roboto {
+			font-family: 'Roboto', sans-serif;
+		}
+
+		Cuadrada {
+			font-family: 'Zilla Slab', serif;
+		}
+	}
+*/
 
 a {
 	text-decoration: none;
@@ -81,21 +98,43 @@ body {
 		position        : fixed;
 		top             : 0px;
 		left            : 0px;
-		background-color: #202020;
+		background-color: rgba(32, 32, 32, 0.8);
 		z-index         : 90;
 		display         : flex;
 		align-items     : center;
+		justify-content : center;
+		flex-direction  : column;
 		margin-left     : -40%;
 		transition      : all 0.3s ease-out;
+		overflow        : hidden;
 	}
 
 	body > .nav-active {
 		margin-left: 0px;
 	}
 
+		body > nav > span {
+			display    : flex;
+			align-items: center;
+			font-family: 'Roboto', sans-serif;
+			font-size  : 2em;
+			font-weight: 700;
+			color      : white;
+			position   : absolute;
+			top        : 280px;
+		}
+
+			body > nav > span:before {
+				content         : '';
+				width           : 400px;
+				height          : 2px;
+				background-color: white;
+				position        : absolute;
+				right           : -405px;
+				bottom          : 10px;
+			}
+
 		body > nav > ul {
-			position  : absolute;
-			left      : 120px;
 			list-style: none;
 		}
 
@@ -108,11 +147,26 @@ body {
 			}
 
 				body > nav > ul > li > a {
-					font-family: 'Zilla Slab', serif;
-					font-weight: 300;
-					color      : #a4a4a4;
-					font-size  : 1.1em;
+					font-family    : 'Zilla Slab', serif;
+					font-weight    : 300;
+					color          : #a4a4a4;
+					font-size      : 1.1em;
+					position       : relative;
+					display        : flex;
+					align-items    : center;
+					justify-content: center;
 				}
+
+					body > nav > ul > li > a > i {
+						position  : absolute;
+						left      : -20px;
+						opacity   : 0;
+						transition: all 0.3s ease-out;
+					}
+
+					body > nav > ul > li > a:hover > i {
+						opacity: 1;
+					}
 
 		body > nav > div {
 			display : inline-block;
@@ -131,17 +185,61 @@ body {
 				color      : white;
 			}
 
-	body > header {
-		width          : 100%;
-		height         : 100vh;
-		padding        : 0px 120px;
-		display        : flex;
-		align-items    : center;
-		justify-content: center;
-		position       : relative;
+	#Inicio {
+		width                  : 100%;
+		height                 : 100vh;
+		padding                : 0px 120px;
+		display                : flex;
+		align-items            : center;
+		justify-content        : center;
+		position               : relative;
+		background-image       : url('../images/cabecera/fondo.jpg');
+		-webkit-background-size: cover;
+		background-size        : cover;
+		background-position    : center;
 	}
 
-		body > header > ul {
+		#Inicio > h1 {
+			display        : flex;
+			align-items    : flex-end;
+			justify-content: center;
+			position       : relative;
+		}
+
+			#Inicio > h1 > span {
+				color      : #d6007d;
+				font-family: 'Roboto', sans-serif;
+				font-weight: 700;
+				font-size  : 5em;
+				position   : absolute;
+				z-index    : 10;
+			}
+
+			#Inicio > h1 > i {
+				font-style    : normal;
+				font-family   : 'Playfair Display', serif;
+				font-size     : 20em;
+				font-weight   : 700;
+				color         : white;
+				position      : absolute;
+				z-index       : 9;
+				text-transform: uppercase;
+				bottom        : -100px;
+				left          : -100px;
+			}
+
+			#Inicio > h1 > strong {
+				color      : white;
+				display    : inline-block;
+				position   : absolute;
+				font-family: 'Roboto', sans-serif;
+				font-weight: 700;
+				right      : -470px;
+				bottom     : 0px;
+				font-size: 1.5em;
+			}
+
+		#Inicio > ul {
 			width          : 100%;
 			height         : 75px;
 			list-style     : none;
@@ -154,19 +252,19 @@ body {
 			left           : 0px;
 		}
 
-			body > header > ul > li {
+			#Inicio > ul > li {
 				margin-right: 20px;
 			}
 
-			body > header > ul > li:last-of-type {
+			#Inicio > ul > li:last-of-type {
 				margin-right: 0px;
 			}
 
-				body > header > ul > li > a {
+				#Inicio > ul > li > a {
 					color: white;
 				}
 
-		body > header > h-footer {
+		#Inicio > h-footer {
 			width          : 100%;
 			padding        : 0px 120px;
 			display        : flex;
@@ -178,32 +276,32 @@ body {
 			left           : 0px;
 		}
 
-			body > header > h-footer > div {
+			#Inicio > h-footer > div {
 				display: flex;
 				width  : 33.33%;
 			}
 
-			body > header > h-footer > div:first-of-type {
+			#Inicio > h-footer > div:first-of-type {
 				flex-direction: column;
 				align-items   : flex-start;
 			}
 
-				body > header > h-footer > div:first-of-type > img {
+				#Inicio > h-footer > div:first-of-type > img {
 					width        : 300px;
 					margin-bottom: 5px;
 				}
 
-				body > header > h-footer > div:first-of-type > a {
+				#Inicio > h-footer > div:first-of-type > a {
 					font-family: 'Zilla Slab', serif;
 					color      : white;
 				}
 
-			body > header > h-footer > div:nth-of-type(2) {
+			#Inicio > h-footer > div:nth-of-type(2) {
 				align-items    : center;
 				justify-content: center;
 			}
 
-				body > header > h-footer > div:nth-of-type(2) > scroll {
+				#Inicio > h-footer > div:nth-of-type(2) > scroll {
 					display        : flex;
 					align-items    : center;
 					justify-content: center;
@@ -211,7 +309,7 @@ body {
 					width          : 100px;
 				}
 
-					body > header > h-footer > div:nth-of-type(2) > scroll > a {
+					#Inicio > h-footer > div:nth-of-type(2) > scroll > a {
 						width        : 30%;
 						height       : 50px;
 						border       : 1px solid white;
@@ -219,7 +317,7 @@ body {
 						margin-bottom: 7.5px;
 					}
 
-					body > header > h-footer > div:nth-of-type(2) > scroll > s-text {
+					#Inicio > h-footer > div:nth-of-type(2) > scroll > s-text {
 						font-family  : 'Zilla Slab', serif;
 						display      : block;
 						width        : 100%;
@@ -231,7 +329,7 @@ body {
 						margin-bottom: 5px;
 					}
 
-					body > header > h-footer > div:nth-of-type(2) > scroll > s-city {
+					#Inicio > h-footer > div:nth-of-type(2) > scroll > s-city {
 						font-family   : 'Zilla Slab', serif;
 						display       : block;
 						width         : 100%;
@@ -241,17 +339,17 @@ body {
 						color         : white;
 					}
 
-			body > header > h-footer > div:last-of-type {
+			#Inicio > h-footer > div:last-of-type {
 				flex-direction: column;
 				align-items   : flex-end;
 			}
 
-				body > header > h-footer > div:last-of-type > img {
+				#Inicio > h-footer > div:last-of-type > img {
 					width        : 300px;
 					margin-bottom: 5px;
 				}
 
-				body > header > h-footer > div:last-of-type > a {
+				#Inicio > h-footer > div:last-of-type > a {
 					font-family: 'Zilla Slab', serif;
 					color      : white;
 				}
@@ -260,11 +358,14 @@ body {
 		width           : 100%;
 		padding         : 80px 120px;
 		background-color: white;
+		display         : flex;
+		flex-flow       : row wrap;
+		justify-content : space-between;
+		align-items     : center;
 	}
 
 		#Clientes > div {
-			width        : 100%;
-			margin-bottom: 40px;
+			width: calc(50% - 20px);
 		}
 
 			#Clientes > div > img {
@@ -272,11 +373,11 @@ body {
 			}
 
 		#Clientes > clients {
+			width          : calc(50% - 20px);
 			display        : flex;
 			align-items    : center;
 			justify-content: center;
 			flex-direction : column;
-			width          : 100%;
 		}
 
 			#Clientes > clients > h1 {
@@ -299,17 +400,14 @@ body {
 					width: calc(16.6% - 30px);
 				}
 
-	body > break {
-		display        : flex;
-		align-items    : center;
-		justify-content: center;
-		width          : 100%;
-		height         : 400px;
-	}
-
 	#Servicios {
-		width  : 100%;
-		padding: 80px 0px;
+		width           : 100%;
+		height          : 100vh;
+		display         : flex;
+		align-items     : center;
+		justify-content : center;
+		flex-direction  : column;
+		background-color: white;
 	}
 
 		#Servicios > h1 {
@@ -319,7 +417,6 @@ body {
 			display      : block;
 			width        : 100%;
 			text-align   : center;
-			margin-bottom: 20px;
 		}
 
 		#Servicios > div {
@@ -406,11 +503,13 @@ body {
 		display         : flex;
 		flex-flow       : row wrap;
 		justify-content : space-between;
+		position        : relative;
 	}
 
 		#Portafolio > div {
-			width : 33.33%;
-			height: 700px;
+			width   : 33.33%;
+			height  : 100%;
+			position: relative;
 		}
 
 			#Portafolio > div > item-group {
@@ -421,6 +520,7 @@ body {
 
 				#Portafolio > div:first-of-type > item-group > item {
 					display            : block;
+					position           : relative;
 					width              : 100%;
 					height             : 100%;
 					background-size    : cover;
@@ -428,15 +528,15 @@ body {
 				}
 
 				#Portafolio > div:first-of-type > item-group:first-of-type {
-					height: 220px;
+					height: 30%;
 				}
 
 				#Portafolio > div:first-of-type > item-group:nth-of-type(2) {
-					height: 330px;
+					height: 50%;
 				}
 
 				#Portafolio > div:first-of-type > item-group:last-of-type {
-					height         : 150px;
+					height         : 20%;
 					display        : flex;
 					flex-flow      : row wrap;
 					justify-content: space-between;
@@ -469,15 +569,15 @@ body {
 				}
 
 				#Portafolio > div:last-of-type > item-group:last-of-type {
-					height: 220px;
+					height: 30%;
 				}
 
 				#Portafolio > div:last-of-type > item-group:nth-of-type(2) {
-					height: 330px;
+					height: 50%;
 				}
 
 				#Portafolio > div:last-of-type > item-group:first-of-type {
-					height         : 150px;
+					height         : 20%;
 					display        : flex;
 					flex-flow      : row wrap;
 					justify-content: space-between;
@@ -486,6 +586,34 @@ body {
 					#Portafolio > div:last-of-type > item-group:first-of-type > item {
 						width: 50%;
 					}
+
+						#Portafolio > div > item-group > item > a {
+							font-family     : 'Zilla Slab', serif;
+							position        : absolute;
+							width           : 100%;
+							height          : 100%;
+							display         : flex;
+							align-items     : center;
+							justify-content : center;
+							color           : white;
+							background-color: rgba(0, 0, 0, 0.75);
+							opacity         : 0;
+							transition      : all 0.3s ease-out;
+						}
+
+					#Portafolio > div > item-group > item {
+						position: relative;
+					}
+
+						#Portafolio > div > item-group > item > a:hover {
+							opacity: 1;
+						}
+
+							#Portafolio > div > item-group > item > a > span {
+								display    : inline-block;
+								font-size  : 2.5em;
+								font-weight: 300;
+							}
 
 	#Contacto {
 		width           : 100%;
@@ -504,7 +632,7 @@ body {
 			flex-flow      : row wrap;
 			justify-content: space-between;
 			position       : absolute;
-			top            : 0px;
+			top            : 40px;
 			z-index        : 80;
 		}
 
@@ -529,12 +657,16 @@ body {
 
 		#Contacto > div {
 			width   : 50%;
+			height  : 100%;
 			position: relative;
 		}
 
 		#Contacto > div:first-of-type {
 			background-color: #fafafa;
-			padding         : 120px;
+			padding         : 0px 120px;
+			display         : flex;
+			align-items     : center;
+			justify-content : center;
 		}
 
 		#Contacto > div:last-of-type {
@@ -620,48 +752,63 @@ body {
 						background-color: black;
 					}
 
-	body > map {
-		width  : 100%;
-		height : 400px;
-		display: block;
+	#Pie {
+		width           : 100%;
+		height          : 100vh;
+		position        : relative;
+		display         : flex;
+		flex-flow       : row wrap;
+		justify-content : space-between;
+		background-color: white;
 	}
 
-	body > footer {
-		width        : 100%;
-		padding      : 80px 120px;
-		border-bottom: 40px solid #1b1b1b;
-	}
-
-		body > footer > ul {
-			display    : inline-block;
-			font-family: 'Zilla Slab', serif;
-			font-weight: 300;
-			list-style : none;
-			color      : #535353;
+		#Pie > div {
+			width   : 50%;
+			height  : 100%;
+			padding : 0px 120px;
+			position: relative;
 		}
 
-			body > footer > ul > span {
+			#Pie > div > ul {
 				display    : inline-block;
-				font-weight: 500;
-				font-size  : 1.25em;
+				font-family: 'Zilla Slab', serif;
+				font-weight: 300;
+				list-style : none;
+				color      : #535353;
+				position   : absolute;
+				bottom     : 120px;
+				left       : 120px;
 			}
 
-			body > footer > ul > li:first-of-type {
-				white-space   : pre-line;
-				margin-bottom : 20px;
-				padding-bottom: 20px;
-				border-bottom : 2px solid #535353;
-			}
-
-			body > footer > ul > li:last-of-type > a {
-				display        : flex;
-				align-items    : center;
-				justify-content: flex-start;
-				color          : #535353;
-			}
-
-				body > footer > ul > li:last-of-type > a > i {
-					font-size   : 1.75em;
-					margin-right: 5px;
-					color       : #00b147;
+				#Pie > div > ul > span {
+					display    : inline-block;
+					font-weight: 500;
+					font-size  : 1.25em;
 				}
+
+				#Pie > div > ul > li:first-of-type {
+					white-space   : pre-line;
+					margin-bottom : 20px;
+					padding-bottom: 20px;
+					border-bottom : 2px solid #535353;
+				}
+
+				#Pie > div > ul > li:last-of-type > a {
+					display        : flex;
+					align-items    : center;
+					justify-content: flex-start;
+					color          : #535353;
+				}
+
+					#Pie > div > ul > li:last-of-type > a > i {
+						font-size   : 1.75em;
+						margin-right: 5px;
+						color       : #00b147;
+					}
+
+		#Pie > map {
+			display : block;
+			width   : 50%;
+			height  : 100%;
+			position: relative;
+		}
